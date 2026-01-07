@@ -1,67 +1,96 @@
-# PokéCards Store
+PokéCards Store
 
-E-commerce simple de cartas Pokémon construido con React y Vite.  
-Permite ver un listado de cartas y filtrarlas por nombre o categoría (tipo/rareza).
+Este es mi proyecto de e-commerce básico hecho con React + Vite.
+La idea es simular una pequeña tienda de cartas Pokémon donde se pueden ver las cartas, buscar por nombre y filtrar rápido.
 
-## Componentes
+Lo hice como parte de la tarea del curso, enfocándome en aprender a crear componentes, usar props, manejar estado y organizar bien el proyecto.
 
-- `Header.jsx`: título "PokéCards Store" y subtítulo.
-- `SearchBar.jsx`: input controlado con `searchTerm` y `onSearchChange`.
-- `Button.jsx`: botón reutilizable con `children`, `variant` y `onClick`.
-- `ProductCard.jsx`: tarjeta que recibe `name`, `price`, `category`, `image`.
-- `ProductList.jsx`: renderiza lista de productos con `.map()` y `key`.
-- `Footer.jsx`: texto con el año actual.
+¿Qué hace esta página?
 
-## Datos
+Muestra un listado de cartas Pokémon.
 
-- `src/data/products.js` contiene 10 cartas con `id`, `name`, `price`, `category`, `image`.
+Tiene un buscador que filtra por nombre o categoría.
 
-## Cómo ejecutar
+Tiene componentes separados y reutilizables.
 
-```bash
-# Instalar dependencias
+Usa datos simulados desde un archivo products.js.
+
+ Componentes que creé
+
+Estos son los componentes principales que desarrollé:
+
+Header → muestra el título de la página.
+
+SearchBar → input controlado con useState.
+
+ProductCard → recibe props y muestra cada carta.
+
+ProductList → recorre el array con .map() y renderiza las cards.
+
+Button → botón reutilizable.
+
+Footer → información básica al final de la página.
+
+ Estado usado
+
+Uso useState en el buscador para manejar el texto ingresado y filtrar los productos.
+
+ Datos simulados
+
+Puse los datos en:
+
+src/data/products.js
+
+
+Cada carta tiene:
+
+{
+  "id": 1,
+  "name": "Charizard",
+  "price": 14.99,
+  "category": "Fuego",
+  "image": "charizard.png"
+}
+
+🔧 Cómo ejecutar el proyecto en local
+
+Si alguien quiere probarlo en su computador:
+
 npm install
-
-# Ejecutar en modo desarrollo
 npm run dev
-```
 
-Opcionalmente:
+Versión online (Deploy)
 
-```bash
-# Crear build de producción
-npm run build
+El proyecto está publicado en GitHub Pages acá:
 
-# Previsualizar el build
-npm run preview
-```
+ https://espinocoza.github.io/Tarea/
 
-## Tecnologías
+ Capturas de pantalla
+Vista general
 
-- React
-- Vite
+(![1000090464](https://github.com/user-attachments/assets/f84cdfa5-e592-40bb-ba17-53c0e72de190)
+)
 
-## Screenshots
+Buscador funcionando
 
-- Home: ./screenshots/home.png
-- Búsqueda: ./screenshots/search.png
+(![1000090465](https://github.com/user-attachments/assets/e58817c8-046a-4839-8e09-cf99fc8748dd)
+)
 
-## Entrega de Diplomado
+ Tecnologías que usé
 
-- Proyecto correspondiente a la entrega del trabajo de Diplomado.
-- Repositorio público: https://github.com/espinocoza/Tarea
-- Demo en GitHub Pages: https://espinocoza.github.io/Tarea/
-- Cumplimiento de requisitos técnicos mínimos:
-	- 6 componentes custom en `src/components` (Header, SearchBar, Button, ProductCard, ProductList, Footer)
-	- `ProductCard` recibe props (`name`, `price`, `category`, `image`)
-	- Estado con `useState` en `App.jsx` para la búsqueda
-	- Datos simulados en `src/data/products.js` con `id`, `name`, `price`, `category`, `image`
-	- Listado renderizado con `.map()` y uso de `key={id}`
-	- Filtrado por texto (nombre/categoría)
-	- Organización de componentes dentro de `/components`
+React
 
-## Créditos de imágenes
+Vite
 
-- Arte oficial de Pokémon provisto por PokeAPI:
-	- https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/
+JavaScript
 
+CSS
+
+Node.js
+
+GitHub Pages
+
+Comentario personal
+
+Me gustó hacer este proyecto porque pude practicar React ordenado y entendí mucho mejor cómo funcionan los componentes y el estado.
+También aprendí a desplegar una página usando GitHub Pages, que era algo que nunca había hecho.
