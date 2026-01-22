@@ -35,7 +35,7 @@ export default function App() {
     const q = searchTerm.trim().toLowerCase()
     if (!q) return products
     return products.filter(p => p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q))
-  }, [searchTerm])
+  }, [searchTerm, products])
 
   return (
     <div className="app">

@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:final": "cross-env VITE_BASE=/Tarea-Final/ vite build",
+    "build:final": "cross-env VITE_BASE=/TareaDiplomadoFinal/ vite build",
     "preview": "vite preview",
-    "deploy:final": "npm run build:final && gh-pages -d docs -r https://github.com/espinocoza/Tarea-Final.git"
+    "deploy:final": "npm run build:final && gh-pages -d docs -r https://github.com/espinocoza/TareaDiplomadoFinal.git"
   },
   "dependencies": {
     "react": "^18.3.1",

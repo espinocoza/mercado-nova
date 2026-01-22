@@ -1,6 +1,6 @@
 PokéCards Store
 
-Aplicación de e‑commerce en React + Vite para listar productos y buscar por nombre o categoría. Ahora consume datos dinámicos desde la API pública DummyJSON y está lista para desplegarse tanto en este repositorio (Pages con `main/docs`) como en el repositorio `espinocoza/Tarea-Final`.
+Aplicación de e‑commerce en React + Vite para listar productos y buscar por nombre o categoría. Consume datos dinámicos desde la API pública DummyJSON y está lista para desplegarse tanto en este repositorio (Pages con `main/docs`) como en el repositorio `espinocoza/TareaDiplomadoFinal`.
 
 ## ¿Qué hace?
 - Lista productos con imagen, categoría, precio y descripción.
@@ -33,30 +33,30 @@ git add docs && git commit -m "build: docs" && git push
 3) En GitHub → Settings → Pages: Source `Deploy from a branch`, Branch `main`, Folder `/docs`.
 4) URL: https://espinocoza.github.io/Tarea/
 
-## Deploy a Tarea-Final
-También puedes publicar el mismo build en `espinocoza/Tarea-Final` (Pages bajo `/Tarea-Final/`).
+## Deploy a TareaDiplomadoFinal
+También puedes publicar el mismo build en `espinocoza/TareaDiplomadoFinal` (Pages bajo `/TareaDiplomadoFinal/`).
 
 Scripts agregados:
 ```bash
-# Compila con base /Tarea-Final/
+# Compila con base /TareaDiplomadoFinal/
 npm run build:final
 
-# Compila y publica docs/ al branch gh-pages de Tarea-Final
+# Compila y publica docs/ al branch gh-pages de TareaDiplomadoFinal
 npm run deploy:final
 ```
 Requisitos:
-- Acceso de push al repo `espinocoza/Tarea-Final`.
-- En `Tarea-Final` → Settings → Pages: Source `Deploy from a branch`, Branch `gh-pages`.
-- URL: https://espinocoza.github.io/Tarea-Final/
+- Acceso de push al repo `espinocoza/TareaDiplomadoFinal`.
+- En `TareaDiplomadoFinal` → Settings → Pages: Source `Deploy from a branch`, Branch `gh-pages`.
+- URL: https://espinocoza.github.io/TareaDiplomadoFinal/
 
 ## Solución a “página en blanco”
 Si ves la página en blanco en Pages, normalmente es por una `base` incorrecta en Vite (los assets cargan desde otra ruta):
-- Este repo debe construir con base `/Tarea/`.
-- Para `Tarea-Final`, la base debe ser `/Tarea-Final/`.
+- Este repo puede construir con base `/Tarea/`.
+- Para `TareaDiplomadoFinal`, la base debe ser `/TareaDiplomadoFinal/`.
 
 Cómo funciona:
-- [vite.config.js](vite.config.js) usa `process.env.VITE_BASE` (si no está, cae en `/Tarea/`).
-- `npm run build:final` establece `VITE_BASE=/Tarea-Final/` automáticamente.
+- [vite.config.js](vite.config.js) usa `process.env.VITE_BASE` (si no está, cae en `/TareaDiplomadoFinal/`).
+- `npm run build:final` establece `VITE_BASE=/TareaDiplomadoFinal/` automáticamente.
 
 ## Componentes principales
 - `Header.jsx`, `SearchBar.jsx`, `ProductCard.jsx`, `ProductList.jsx`, `Loader.jsx`, `ErrorMessage.jsx`, `Footer.jsx`.
