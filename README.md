@@ -68,7 +68,9 @@ bash
 Copiar código
 npm run build
 npm run preview
- Capturas de pantalla
+
+
+Capturas de pantalla
 Vista general screenshots/1000100785.png 
 
 Búsqueda funcionando screenshots/1000100786.png   screenshots/1000100787.png
@@ -115,4 +117,5 @@ CSS
 
  Notas
 Este repositorio es un proyecto educativo/demostrativo: los productos provienen de DummyJSON y el flujo de compra es simulado (carrito local).
+
 
