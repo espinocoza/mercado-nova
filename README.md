@@ -1,69 +1,74 @@
-PokéCards Store
+# Mercado Nova
 
-Aplicación de e‑commerce en React + Vite para listar productos y buscar por nombre o categoría. Consume datos dinámicos desde la API pública DummyJSON y está lista para desplegarse tanto en este repositorio (Pages con `main/docs`) como en el repositorio `espinocoza/TareaDiplomadoFinal`.
+Aplicación de e‑commerce en React + Vite que lista productos de DummyJSON y permite buscar por nombre/categoría. Incluye manejo de carga (loading), errores y una UI responsiva.
 
-## ¿Qué hace?
-- Lista productos con imagen, categoría, precio y descripción.
-- Búsqueda en tiempo real por nombre/categoría.
-- Estados de carga y error.
-- Componentes reutilizables y estilos responsivos.
+## Descripción
+- Lista productos con imagen, categoría y precio.
+- Búsqueda en tiempo real por nombre y categoría.
+- Estados de `loading` y `error` al consumir API.
+- Componentes reutilizables y estilos sencillos.
+
+## Componentes creados
+- `Header.jsx` (brand con logo + nombre de tienda)
+- `SearchBar.jsx`
+- `CategoryFilter.jsx` (filtrado por categoría)
+- `ProductCard.jsx`
+- `ProductList.jsx`
+- `Cart.jsx` (carrito de compras con cantidad y total)
+- `Loader.jsx`
+- `ErrorMessage.jsx`
+- `Footer.jsx`
+
+## Tecnologías usadas
+- React, Vite
+- JavaScript (ES6+), CSS
 
 ## Fuente de datos
-- Endpoint: https://dummyjson.com/products?limit=100
+- API: https://dummyjson.com/products
 - Servicio: ver [src/services/products.js](src/services/products.js)
-- Mapeo de campos: `{ id, title→name, price, category, thumbnail→image, description }`
+- Manejo de estados: `loading` y `error` implementados.
+
+## Carrito de compras
+- Botón “Agregar al carrito” en cada producto.
+- Incrementa cantidad si el producto ya existe.
+- Quitar item, cambiar cantidad, vaciar carrito.
+- Total calculado automáticamente.
+- Persistencia en `localStorage`.
 
 ## Ejecutar en local
 ```bash
 npm install
 npm run dev
 ```
-Abrir: http://localhost:5173/Tarea/
+Abrir el puerto que muestre Vite (por defecto 5173).
 
-## Deploy (este repo: Tarea)
-Este repositorio publica desde `main` → carpeta `docs` (GitHub Pages):
-1) Build de producción (usa base `/Tarea/` por defecto):
+## Build y Preview
 ```bash
 npm run build
+npm run preview
 ```
-2) Commit/push de `docs/` si quieres versionar el build (opcional):
-```bash
-git add docs && git commit -m "build: docs" && git push
-```
-3) En GitHub → Settings → Pages: Source `Deploy from a branch`, Branch `main`, Folder `/docs`.
-4) URL: https://espinocoza.github.io/Tarea/
 
-## Deploy a TareaDiplomadoFinal
-También puedes publicar el mismo build en `espinocoza/TareaDiplomadoFinal` (Pages bajo `/TareaDiplomadoFinal/`).
+## Capturas de pantalla
+Por favor agrega estas imágenes a la carpeta `screenshots/` antes de publicar:
 
-Scripts agregados:
-```bash
-# Compila con base /TareaDiplomadoFinal/
-npm run build:final
+![Vista general](./screenshots/home.png)
+![Búsqueda](./screenshots/search.png)
+<!-- Opcional: ![Loading](./screenshots/loading.png) -->
 
-# Compila y publica docs/ al branch gh-pages de TareaDiplomadoFinal
-npm run deploy:final
-```
-Requisitos:
-- Acceso de push al repo `espinocoza/TareaDiplomadoFinal`.
-- En `TareaDiplomadoFinal` → Settings → Pages: Source `Deploy from a branch`, Branch `gh-pages`.
-- URL: https://espinocoza.github.io/TareaDiplomadoFinal/
+## GitHub Pages (opcional)
+Para publicar como GitHub Pages (método simple usando `docs/`):
+- Ajusta la base en [vite.config.js](vite.config.js) según el nombre del repo:
+	```js
+	export default defineConfig({
+		base: "/NOMBRE_REPO/",
+		build: { outDir: "docs", emptyOutDir: true },
+		plugins: [react()],
+	})
+	```
+- Ejecuta el build y sube `docs/` a `main`.
+- En GitHub → Settings → Pages: Source `Deploy from a branch`, Branch `main`, Folder `/docs`.
 
-## Solución a “página en blanco”
-Si ves la página en blanco en Pages, normalmente es por una `base` incorrecta en Vite (los assets cargan desde otra ruta):
-- Este repo puede construir con base `/Tarea/`.
-- Para `TareaDiplomadoFinal`, la base debe ser `/TareaDiplomadoFinal/`.
+Si prefieres publicar en `gh-pages`, puedes mantener `build.outDir` como `dist` y usar acciones o copiar a esa rama.
 
-Cómo funciona:
-- [vite.config.js](vite.config.js) usa `process.env.VITE_BASE` (si no está, cae en `/TareaDiplomadoFinal/`).
-- `npm run build:final` establece `VITE_BASE=/TareaDiplomadoFinal/` automáticamente.
-
-## Componentes principales
-- `Header.jsx`, `SearchBar.jsx`, `ProductCard.jsx`, `ProductList.jsx`, `Loader.jsx`, `ErrorMessage.jsx`, `Footer.jsx`.
-
-## Tecnologías
-- React, Vite, JavaScript, CSS, GitHub Pages
-
-## Screenshots
-- Vista general: ./screenshots/home.png
-- Búsqueda: ./screenshots/search.png
+## Nota sobre API
+Este proyecto consume DummyJSON (`/products`). La app maneja estados de `loading` mientras se realiza el fetch y `error` si la solicitud falla.

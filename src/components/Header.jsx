@@ -1,8 +1,11 @@
 export default function Header() {
   return (
     <header className="header">
-      <h1>PokéCards Store</h1>
-      <p>Cartas Pokémon para fans y coleccionistas</p>
+      <div className="brand">
+        <span className="brand-logo" aria-hidden="true">🛒</span>
+        <h1 className="brand-name">Mercado Nova</h1>
+      </div>
+      <p>Productos variados al mejor precio</p>
     </header>
   )
 }

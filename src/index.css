@@ -42,6 +42,25 @@ body {
   text-align: center;
 }
 
+/* Brand (logo + nombre) */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding-top: 1rem;
+}
+
+.brand-logo {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 2rem;
+}
+
 .search-bar {
   margin: 1.25rem 0 1.5rem;
 }
@@ -157,7 +176,102 @@ body {
   color: var(--muted);
 }
 
+/* Category filter chips */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.chip {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #0b1220;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+}
+
+/* Cart styles */
+.cart {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 1rem;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-info span { color: var(--muted); }
+
+.cart-qty button {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #0b1220;
+  color: var(--text);
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+}
+
+.cart-qty span { margin: 0 0.5rem; }
+
+.cart-item .remove {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.cart-actions { text-align: right; }
+
 @media (max-width: 480px) {
   .header h1 { font-size: 1.6rem; }
+  .brand-name { font-size: 1.6rem; }
+  .brand-logo { font-size: 1.4rem; }
   .product-list { gap: 0.8rem; }
+  .cart-item { grid-template-columns: 48px 1fr auto auto; }
+  .cart-item img { width: 48px; height: 48px; }
 }

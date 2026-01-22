@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard.jsx'
 
-export default function ProductList({ products }) {
+export default function ProductList({ products, onAdd }) {
   if (!products || products.length === 0) {
     return (
       <p className="no-results">
@@ -15,11 +15,13 @@ export default function ProductList({ products }) {
       {products.map((p) => (
         <ProductCard
           key={p.id}
+          id={p.id}
           name={p.name}
           price={p.price}
           category={p.category}
           image={p.image}
           description={p.description}
+          onAdd={onAdd}
         />
       ))}
     </section>
